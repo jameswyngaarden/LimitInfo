@@ -1,6 +1,30 @@
 digraph {
 	subgraph "clusterobs_id (27526)" {
-		belief_1 [label="belief_1
+		belief_0 [label="belief_0
+~
+MutableData" shape=box style="rounded, filled"]
+		risks [label="risks
+~
+MutableData" shape=box style="rounded, filled"]
+		sub_idx [label="sub_idx
+~
+ConstantData" shape=box style="rounded, filled"]
+		belief_9 [label="belief_9
+~
+MutableData" shape=box style="rounded, filled"]
+		belief_3 [label="belief_3
+~
+MutableData" shape=box style="rounded, filled"]
+		belief_6 [label="belief_6
+~
+MutableData" shape=box style="rounded, filled"]
+		belief_7 [label="belief_7
+~
+MutableData" shape=box style="rounded, filled"]
+		belief_10 [label="belief_10
+~
+MutableData" shape=box style="rounded, filled"]
+		belief_4 [label="belief_4
 ~
 MutableData" shape=box style="rounded, filled"]
 		belief_2 [label="belief_2
@@ -12,47 +36,17 @@ MutableData" shape=box style="rounded, filled"]
 		belief_8 [label="belief_8
 ~
 MutableData" shape=box style="rounded, filled"]
-		belief_9 [label="belief_9
+		belief_1 [label="belief_1
 ~
 MutableData" shape=box style="rounded, filled"]
-		belief_4 [label="belief_4
-~
-MutableData" shape=box style="rounded, filled"]
-		belief_10 [label="belief_10
-~
-MutableData" shape=box style="rounded, filled"]
-		risks [label="risks
-~
-MutableData" shape=box style="rounded, filled"]
-		belief_7 [label="belief_7
-~
-MutableData" shape=box style="rounded, filled"]
-		belief_0 [label="belief_0
-~
-MutableData" shape=box style="rounded, filled"]
-		belief_3 [label="belief_3
-~
-MutableData" shape=box style="rounded, filled"]
-		belief_6 [label="belief_6
-~
-MutableData" shape=box style="rounded, filled"]
-		sub_idx [label="sub_idx
-~
-ConstantData" shape=box style="rounded, filled"]
 		label="obs_id (27526)" labeljust=r labelloc=b style=rounded
 	}
-	MUBeta [label="MUBeta
-~
-Normal" shape=ellipse]
-	sd_B [label="sd_B
+	sd_AA [label="sd_AA
 ~
 HalfNormal" shape=ellipse]
 	MUalpha [label="MUalpha
 ~
 Normal" shape=ellipse]
-	sd_AA [label="sd_AA
-~
-HalfNormal" shape=ellipse]
 	subgraph "clusterSubs (310)" {
 		beta [label="beta
 ~
@@ -63,39 +57,37 @@ Normal" shape=ellipse]
 		label="Subs (310)" labeljust=r labelloc=b style=rounded
 	}
 	subgraph cluster27526 {
-		Choose_risk [label="Choose_risk
-~
-Bernoulli" shape=ellipse style=filled]
 		V_A [label="V_A
 ~
 Deterministic" shape=box]
+		Choose_risk [label="Choose_risk
+~
+Bernoulli" shape=ellipse style=filled]
 		V_R [label="V_R
 ~
 Deterministic" shape=box]
 		label=27526 labeljust=r labelloc=b style=rounded
 	}
-	MUalpha -> sig
 	sd_AA -> sig
-	sd_B -> beta
-	MUBeta -> beta
-	belief_2 -> V_A
+	MUalpha -> sig
+	belief_0 -> V_A
+	sub_idx -> V_A
+	belief_9 -> V_A
+	belief_3 -> V_A
+	belief_6 -> V_A
+	belief_7 -> V_A
+	belief_10 -> V_A
+	belief_4 -> V_A
 	belief_5 -> V_A
 	belief_8 -> V_A
-	belief_10 -> V_A
-	belief_9 -> V_A
-	belief_4 -> V_A
-	belief_1 -> V_A
-	belief_7 -> V_A
-	belief_0 -> V_A
 	sig -> V_A
-	belief_6 -> V_A
-	belief_3 -> V_A
-	sub_idx -> V_A
-	risks -> V_R
+	belief_2 -> V_A
+	belief_1 -> V_A
 	sub_idx -> V_R
+	risks -> V_R
 	sig -> V_R
-	sub_idx -> Choose_risk
 	V_A -> Choose_risk
-	V_R -> Choose_risk
+	sub_idx -> Choose_risk
 	beta -> Choose_risk
+	V_R -> Choose_risk
 }
